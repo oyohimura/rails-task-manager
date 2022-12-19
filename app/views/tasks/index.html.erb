@@ -1,0 +1,16 @@
+hello! Voici ta liste de tâches :
+
+<div class="container">
+  <% @tasks.each do |task| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-title">
+      <h3><%= link_to task.title, task_path(task) %></h3>
+      </div>
+      <div class="card-body">
+        <p class="card-text"><%= task.details %></p>
+      </div>
+    </div>
+  <% end %>
+
+<%= link_to 'Add a new task', new_task_path %>
+</div>
